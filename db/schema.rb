@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_12_29_064545) do
+ActiveRecord::Schema.define(version: 2024_03_10_052858) do
+
+  create_table "async_logs", charset: "utf8mb4", force: :cascade do |t|
+    t.string "message"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "tasks", charset: "utf8mb4", force: :cascade do |t|
     t.text "content"

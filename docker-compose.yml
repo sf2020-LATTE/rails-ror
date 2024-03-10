@@ -18,5 +18,15 @@ services:
       - db-volume:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: password
+  redis:
+    image: redis:latest
+    ports:
+      - 6379:6379
+    volumes:
+      - redis-volume:/redis-data
+    environment:
+      RAILS_ENV: development
+      REDIS_URL: redis://redis:6379
 volumes:
   db-volume:
+  redis-volume:
